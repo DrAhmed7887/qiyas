@@ -24,7 +24,7 @@ Inputs (DOB, sex, weight, length, lying/standing)
 ## Evidence & Safety
 
 - **Source data:** WHO Multicentre Growth Reference Study Group, *WHO Child Growth Standards*, 2006. Eight expanded LMS tables downloaded unmodified; URLs in `data/who/SOURCE.md`.
-- **Tests:** {{TEST_COUNT}} automated tests, all green (±0.001 z). Expected values are the WHO table rows themselves—every 30th row is fed back through the engine and must return its own known z (−3 … +3).
+- **Tests:** {{TEST_COUNT}} automated tests, all green. Expected values are WHO's own table rows: every 30th row's SD columns are fed back through the engine and must return −3 … +3 (within the rounding of WHO's 3-decimal tables; ±0.001 z against SD lines recomputed from L, M, S).
 - **0.7 cm correction** applied at the 731-day boundary, per WHO guidance.
 - **No diagnosis language.** The app states what the measurement shows and when to see a health worker.
 - **No data stored.** No localStorage, no analytics, no server logs.
@@ -33,7 +33,7 @@ Inputs (DOB, sex, weight, length, lying/standing)
 
 ## Finished / Not Finished
 
-- **Shipped:** {{SHIPPED}}
+- **Shipped:** weight-for-age, length/height-for-age and weight-for-length/height for ages 0–5; WHO 0.7 cm correction; implausible-value flags; red-flag override; Arabic (RTL) and English; "how this was calculated" view
 - **Not in this build:** BMI-for-age, ages 5–19, multi-visit tracking, native app, PDF export.
 
 ## Team & Links
