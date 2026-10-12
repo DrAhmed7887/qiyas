@@ -1,0 +1,12 @@
+node_modules/
+.next/
+dist/
+build/
+.venv/
+__pycache__/
+.env
+.env.*
+*.mp4
+*.mov
+*.pdf
+.DS_Store
