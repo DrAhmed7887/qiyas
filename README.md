@@ -19,13 +19,13 @@ An Arabic-first growth check that runs in the browser, for one visit, with nothi
 ## Where things live
 | What | Where |
 |---|---|
-| Code (working copy) | `~/projects/hackathons/2026-10-univabio-namaa` on the MacBook Pro |
+| Code (working copy) | `~/Projects/hackathons/2026-10-univabio-namaa` on the MacBook Pro |
 | Code (source of truth) | GitHub `DrAhmed7887/namaa` (private until submission) |
 | Video, PDF, screenshots | Google Drive `Zayed OS/Hackathons/2026-10-univabio-namaa/` |
 | Tracking | Notion → 🇪🇺 EU Opportunity Scout → UnivaBio row |
 
 ## When the hackathon is over (keep the laptops light)
 1. Push everything and tag it: `git tag univabio-submission && git push --tags`
-2. Bundle it to the SSD archive: `git bundle create "/Volumes/Extreme SSD/_WORKSPACE/03_ARCHIVE/hackathons/2026-10-univabio-namaa.bundle" --all`
+2. Bundle it to the SSD archive: `git bundle create "/Volumes/Extreme SSD/Archive/hackathons/2026-10-univabio-namaa.bundle" --all`
 3. Check the bundle: `git bundle verify <that file>`
 4. Only then, with Ahmed's OK, move this local folder to the Trash. GitHub + the SSD bundle keep it; Drive keeps the media.
