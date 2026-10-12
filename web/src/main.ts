@@ -13,6 +13,7 @@ import {
   type FieldErrors,
 } from './ui/form';
 import { applyStatic, getLang, setLang, t } from './ui/i18n';
+import { approvedTextFor, renderAsk } from './ui/ask';
 import { renderResult } from './ui/result';
 
 interface State {
@@ -28,6 +29,7 @@ function must<T extends HTMLElement>(id: string): T {
 
 const form = must<HTMLFormElement>('growth-form');
 const resultEl = must('result');
+const askEl = must('ask');
 const toggle = must<HTMLButtonElement>('lang-toggle');
 
 // In-memory only. Nothing is written to storage, cookies or the network.
@@ -39,10 +41,14 @@ function render(): void {
   toggle.setAttribute('aria-label', t('lang.toggleLabel'));
   showErrors(form, state.errors);
   if (state.last) {
-    renderResult(resultEl, state.last.input, state.last.assessment);
+    const a = state.last.assessment;
+    renderResult(resultEl, state.last.input, a);
+    renderAsk(askEl, a.overall, approvedTextFor(a.overall, a.remeasure));
   } else {
     resultEl.replaceChildren();
     resultEl.hidden = true;
+    askEl.replaceChildren();
+    askEl.hidden = true;
   }
 }
 

@@ -168,3 +168,14 @@ Things to check clinically: no diagnosis labels, no invented timings ("soon", "t
 |---|---|---|
 | calc.without | Without this correction, length-for-age would read | بدون هذا التعديل، كان الطول بالنسبة للعمر سيُقرأ |
 | calc.without.changed | The correction changes the result to: {band}. Measuring the right way matters. | التعديل يغيّر النتيجة إلى: {band}. طريقة القياس الصحيحة مهمة. |
+
+
+## AI layer strings
+The AI answer is optional, experimental, and always shown below the fixed card. The model may only use the approved meaning/see text for the current result.
+
+| Key | English | العربية |
+|---|---|---|
+| `ask.button` | Ask: what does this mean, and what should I do next? | اسأل: ماذا يعني هذا، وماذا أفعل الآن؟ |
+| `ask.label` | AI answer (experimental): the result above does not change | إجابة الذكاء الاصطناعي (تجريبية): النتيجة أعلاه لا تتغير |
+| `ask.unavailable` | AI not available, showing the approved text | الذكاء الاصطناعي غير متاح، نعرض النص المعتمد |
+| `ask.loading` | Thinking... | جارٍ التفكير... |

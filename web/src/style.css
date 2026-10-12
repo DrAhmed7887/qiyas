@@ -169,3 +169,10 @@ input[type='text'] { direction: ltr; text-align: start; }
   .btn { transition: filter 0.15s; }
 }
 .steps .row.changed { border: 2px solid var(--primary); }
+
+/* Optional AI answer, always below the fixed card */
+.ask-btn { font: inherit; padding: 0.6rem 1rem; border: 1px solid var(--line); border-radius: 0.5rem; background: #fff; cursor: pointer; }
+.ask-btn:disabled { opacity: 0.6; cursor: wait; }
+.ask-box { border: 2px dashed var(--line); border-radius: 0.5rem; padding: 0.75rem 1rem; margin-block: 1rem 0; background: #fff; }
+.ask-box h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+.small { font-size: 0.85rem; }

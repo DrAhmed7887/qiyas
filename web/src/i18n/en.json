@@ -131,5 +131,9 @@
   "footer.source": "WHO Child Growth Standards",
   "footer.repo": "Data sources and download dates: data/who/SOURCE.md in the repository.",
   "calc.without": "Without this correction, length-for-age would read",
-  "calc.without.changed": "The correction changes the result to: {band}. Measuring the right way matters."
+  "calc.without.changed": "The correction changes the result to: {band}. Measuring the right way matters.",
+  "ask.button": "Ask: what does this mean, and what should I do next?",
+  "ask.label": "AI answer (experimental): the result above does not change",
+  "ask.unavailable": "AI not available, showing the approved text",
+  "ask.loading": "Thinking..."
 }

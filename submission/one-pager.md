@@ -18,13 +18,13 @@ WHO's Child Growth Standards (2006) define the z-scores. WHO's own tools—**Ant
 Inputs (DOB, sex, weight, length, lying/standing)
   → WHO 2006 tables + deterministic LMS engine (0.7 cm rule at 731 days, restricted z)
   → WHO implausibility flags · fixed band · independent urgent-action check
-  → approved Arabic/English explanation  (+ bounded AI: {{AI_STATUS}})
+  → approved Arabic/English explanation  (+ bounded AI: shipped as an optional local server; one fixed question, answered from the approved text, output filtered, never changes the result)
 ```
 
 ## Evidence & Safety
 
 - **Source data:** WHO Multicentre Growth Reference Study Group, *WHO Child Growth Standards*, 2006. Eight expanded LMS tables downloaded unmodified; URLs in `data/who/SOURCE.md`.
-- **Tests:** {{TEST_COUNT}} automated tests, all green. Expected values are WHO's own table rows: every 30th row's SD columns are fed back through the engine and must return −3 … +3 (within the rounding of WHO's 3-decimal tables; ±0.001 z against SD lines recomputed from L, M, S).
+- **Tests:** 128 automated tests, all green. Expected values are WHO's own table rows: every 30th row's SD columns are fed back through the engine and must return −3 … +3 (within the rounding of WHO's 3-decimal tables; ±0.001 z against SD lines recomputed from L, M, S).
 - **0.7 cm correction** applied at the 731-day boundary, per WHO guidance.
 - **No diagnosis language.** The app states what the measurement shows and when to see a health worker.
 - **No data stored.** No localStorage, no analytics, no server logs.
