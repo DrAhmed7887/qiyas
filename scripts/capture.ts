@@ -196,7 +196,10 @@ async function main() {
         await runDemo(p, 'correction'); await wait(p);
         await tid(p, 'ask-button').scrollIntoViewIfNeeded();
         await tid(p, 'ask-button').click();
-        await tid(p, 'ask-answer').filter({ hasText: /\S/ }).waitFor({ timeout: 30000 });
+        // Wait for the real reply box, not the loading line; refuse a fallback reply.
+        await tid(p, 'ask-answer').locator('.ask-box').waitFor({ timeout: 30000 });
+        if (await tid(p, 'ask-answer').locator('.muted.small').count()) throw new Error('AI fell back to approved text; is npm run explain running?');
+        await tid(p, 'ask-answer').scrollIntoViewIfNeeded();
         await wait(p, 800);
         await still(p, 'desktop-ar-ai-answer', 'ai-answer', 'ar', '1920x1080');
         await elShot(p, 'ask-answer', 'desktop-ar-ai-answer-el', 'ai-answer', 'ar', '1920x1080');
