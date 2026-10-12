@@ -1,3 +1,7 @@
+// Self-hosted IBM Plex Sans Arabic (Arabic + Latin). Bundled by Vite: no third-party requests.
+import '@fontsource/ibm-plex-sans-arabic/400.css';
+import '@fontsource/ibm-plex-sans-arabic/500.css';
+import '@fontsource/ibm-plex-sans-arabic/700.css';
 import './style.css';
 import { DEMO_PROFILES } from './demo/profiles';
 import { assess } from './growth';
@@ -30,6 +34,7 @@ function must<T extends HTMLElement>(id: string): T {
 const form = must<HTMLFormElement>('growth-form');
 const resultEl = must('result');
 const askEl = must('ask');
+const emptyEl = must('result-empty');
 const toggle = must<HTMLButtonElement>('lang-toggle');
 
 // In-memory only. Nothing is written to storage, cookies or the network.
@@ -40,6 +45,7 @@ function render(): void {
   toggle.lang = getLang() === 'ar' ? 'en' : 'ar';
   toggle.setAttribute('aria-label', t('lang.toggleLabel'));
   showErrors(form, state.errors);
+  emptyEl.hidden = state.last !== null;
   if (state.last) {
     const a = state.last.assessment;
     renderResult(resultEl, state.last.input, a);
@@ -70,7 +76,9 @@ function runCheck(): void {
   state = { errors: {}, last: { input: read.input, assessment: outcome } };
   render();
   resultEl.focus({ preventScroll: true });
-  resultEl.scrollIntoView({ block: 'start' });
+  // On wide screens the result sits beside the form and is already in view.
+  const top = resultEl.getBoundingClientRect().top;
+  if (top < 0 || top > window.innerHeight * 0.4) resultEl.scrollIntoView({ block: 'start' });
 }
 
 function init(): void {

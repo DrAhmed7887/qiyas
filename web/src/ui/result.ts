@@ -1,7 +1,10 @@
 import type { Assessment, Band, GrowthInput, IndicatorResult } from '../growth/types';
 import { renderCalc } from './calc';
+import { unadjustedLhfa } from './correction';
 import { h } from './dom';
 import { t } from './i18n';
+import { icon, type IconName } from './icons';
+import { renderZScale, settleZScales } from './zscale';
 
 const BAND_GLYPH: Readonly<Record<Band, string>> = {
   severely_low: '▼▼',
@@ -24,20 +27,26 @@ export function renderResult(container: HTMLElement, input: GrowthInput, a: Asse
     h('h2', { class: 'card-title' }, t('result.title')),
     a.urgent ? urgentBlock(input) : null,
     a.remeasure ? remeasureBlock() : null,
-    measurementBlock(a),
+    measurementBlock(a, input),
     meaningBlock(a),
     renderCalc(a, input),
   ];
   container.replaceChildren(...blocks.filter((b): b is HTMLElement => b !== null));
   container.hidden = false;
+  settleZScales(container);
+}
+
+/** A block heading with its icon; the text always carries the meaning, the icon only helps. */
+function blockHead(id: string, name: IconName, text: string): HTMLElement {
+  return h('h3', { id, class: 'block-head' }, h('span', { class: 'block-icon' }, icon(name)), h('span', {}, text));
 }
 
 function urgentBlock(input: GrowthInput): HTMLElement {
   const signs = SIGNS.filter(([flag]) => input.redFlags[flag]).map(([, key]) => h('li', {}, t(key)));
   return h(
     'section',
-    { class: 'block block-urgent', 'aria-labelledby': 'urgent-h' },
-    h('h3', { id: 'urgent-h' }, t('urgent.title')),
+    { class: 'block block-urgent', 'aria-labelledby': 'urgent-h', 'data-testid': 'block-urgent' },
+    blockHead('urgent-h', 'alert', t('urgent.title')),
     h('p', {}, t('urgent.body')),
     h('p', { class: 'strong' }, t('urgent.signs')),
     h('ul', {}, ...signs),
@@ -47,30 +56,32 @@ function urgentBlock(input: GrowthInput): HTMLElement {
 function remeasureBlock(): HTMLElement {
   return h(
     'section',
-    { class: 'block block-remeasure', 'aria-labelledby': 'remeasure-h' },
-    h('h3', { id: 'remeasure-h' }, t('remeasure.title')),
+    { class: 'block block-remeasure', 'aria-labelledby': 'remeasure-h', 'data-testid': 'block-remeasure' },
+    blockHead('remeasure-h', 'remeasure', t('remeasure.title')),
     h('p', {}, t('remeasure.body')),
     h('p', { class: 'how' }, t('remeasure.how')),
   );
 }
 
-function measurementBlock(a: Assessment): HTMLElement {
+function measurementBlock(a: Assessment, input: GrowthInput): HTMLElement {
+  // The faded "ghost" marker: length-for-age before the WHO 0.7 cm correction.
+  const ghostZ = unadjustedLhfa(a, input)?.z ?? null;
   return h(
     'section',
-    { class: 'block', 'aria-labelledby': 'measure-h' },
-    h('h3', { id: 'measure-h' }, t('measure.title')),
+    { class: 'block block-shows', 'aria-labelledby': 'measure-h', 'data-testid': 'block-shows' },
+    blockHead('measure-h', 'shows', t('measure.title')),
     h('p', { class: 'muted' }, t('measure.note')),
-    h('ul', { class: 'indicators' }, ...a.indicators.map(indicatorItem)),
+    h('ul', { class: 'indicators' }, ...a.indicators.map((r) => indicatorItem(r, r.id === 'lhfa' ? ghostZ : null))),
   );
 }
 
-function indicatorItem(r: IndicatorResult): HTMLElement {
+function indicatorItem(r: IndicatorResult, ghostZ: number | null): HTMLElement {
+  const scale = r.status === 'ok' && r.band && r.z !== null ? renderZScale({ id: r.id, z: r.z, band: r.band, ghostZ }) : null;
   return h(
     'li',
     { class: `indicator status-${r.status}` },
-    h('h4', {}, t(`ind.${r.id}`)),
-    h('p', { class: 'muted q' }, t(`ind.${r.id}.q`)),
-    chip(r),
+    h('div', { class: 'ind-head' }, h('div', {}, h('h4', {}, t(`ind.${r.id}`)), h('p', { class: 'muted q' }, t(`ind.${r.id}.q`))), chip(r)),
+    scale,
     h('p', { class: 'msg' }, message(r)),
   );
 }
@@ -102,10 +113,10 @@ function meaningBlock(a: Assessment): HTMLElement {
   const key = a.remeasure && a.overall === 'routine' ? 'routine_remeasure' : a.overall;
   return h(
     'section',
-    { class: 'block block-meaning' },
-    h('h3', {}, t('meaning.title')),
+    { class: 'block block-meaning', 'aria-labelledby': 'meaning-h' },
+    blockHead('meaning-h', 'next', t('meaning.title')),
     h('p', {}, t(`meaning.${key}`)),
-    h('h3', {}, t('see.title')),
+    h('h4', { class: 'see-title' }, t('see.title')),
     h('p', { class: 'strong' }, t(`see.${key}`)),
   );
 }

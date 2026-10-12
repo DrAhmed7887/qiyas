@@ -3,6 +3,7 @@
 import type { Overall } from '../growth/types';
 import { h } from './dom';
 import { getLang, t } from './i18n';
+import { icon } from './icons';
 
 interface Reply {
   readonly text: string;
@@ -40,8 +41,13 @@ export function approvedTextFor(overall: Overall, remeasureOnly: boolean): strin
 
 /** Fills `container` with the question button and an answer area. */
 export function renderAsk(container: HTMLElement, overall: Overall, approvedText: string): void {
-  const answer = h('div', { class: 'ask-answer', 'aria-live': 'polite' });
-  const button = h('button', { type: 'button', class: 'ask-btn' }, t('ask.button'));
+  const answer = h('div', { class: 'ask-answer', 'aria-live': 'polite', 'data-testid': 'ask-answer' });
+  const button = h(
+    'button',
+    { type: 'button', class: 'ask-btn', 'data-testid': 'ask-button' },
+    icon('spark'),
+    h('span', {}, t('ask.button')),
+  );
   button.addEventListener('click', () => {
     button.disabled = true;
     answer.replaceChildren(h('p', { class: 'muted' }, t('ask.loading')));
@@ -58,6 +64,7 @@ export function renderAsk(container: HTMLElement, overall: Overall, approvedText
       button.disabled = false;
     });
   });
-  container.replaceChildren(button, answer);
+  const head = h('p', { class: 'ask-head' }, h('span', { class: 'badge' }, t('ask.badge')), h('span', {}, t('ask.note')));
+  container.replaceChildren(head, button, answer);
   container.hidden = false;
 }

@@ -179,3 +179,22 @@ The AI answer is optional, experimental, and always shown below the fixed card. 
 | `ask.label` | AI answer (experimental): the result above does not change | إجابة الذكاء الاصطناعي (تجريبية): النتيجة أعلاه لا تتغير |
 | `ask.unavailable` | AI not available, showing the approved text | الذكاء الاصطناعي غير متاح، نعرض النص المعتمد |
 | `ask.loading` | Thinking... | جارٍ التفكير... |
+
+
+## UI upgrade strings
+Added with the visual upgrade (form steps, empty state, z-scale bar, AI box). Not clinical text, but please check the wording.
+
+| Key | English | العربية |
+|---|---|---|
+| `step.child` | About your child | عن طفلك |
+| `step.measure` | The measurement | القياس |
+| `result.empty.title` | Your result will appear here | ستظهر النتيجة هنا |
+| `result.empty.body` | Try an example, or fill in the three steps and press Check. | جرّب مثالاً، أو املأ الخطوات الثلاث واضغط «افحص». |
+| `zscale.usual` | Usual range | المعتاد |
+| `zscale.lower` | Lower | أقل |
+| `zscale.higher` | Higher | أعلى |
+| `zscale.ghost` | Without correction | بدون التعديل |
+| `zscale.final` | With WHO correction | مع تعديل منظمة الصحة العالمية |
+| `zscale.aria` | WHO scale: z {z}, {band}. | مقياس منظمة الصحة العالمية: z {z}، {band}. |
+| `ask.badge` | Experimental | تجريبي |
+| `ask.note` | Optional extra. The result above stays the same. | إضافة اختيارية. النتيجة أعلاه لا تتغير. |

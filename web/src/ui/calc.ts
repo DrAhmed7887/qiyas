@@ -1,15 +1,16 @@
-import { assess } from '../growth';
 import type { Assessment, GrowthInput, IndicatorResult } from '../growth/types';
+import { unadjustedLhfa } from './correction';
 import { h, ltr, type Child } from './dom';
 import { fixed, signed } from './format';
+import { icon } from './icons';
 import { t } from './i18n';
 
 /** The "How this was calculated" fold: entered, adjusted, table, key, z, percentile. */
 export function renderCalc(a: Assessment, input: GrowthInput): HTMLElement {
   return h(
     'details',
-    { class: 'fold' },
-    h('summary', {}, t('calc.title')),
+    { class: 'fold', 'data-testid': 'calc-fold' },
+    h('summary', {}, h('span', { class: 'fold-icon' }, icon('calc')), h('span', {}, t('calc.title'))),
     h(
       'div',
       { class: 'fold-body' },
@@ -58,15 +59,15 @@ function lengthSteps(a: Assessment, input: GrowthInput): HTMLElement {
 
 /** Length-for-age as it would read if the 0.7 cm correction were skipped. */
 function withoutCorrection(a: Assessment, input: GrowthInput): HTMLElement | null {
-  if (a.adjustmentCm === 0) return null;
-  const unadjusted = assess({ ...input, position: a.adjustmentCm > 0 ? 'lying' : 'standing' });
-  const before = unadjusted.ok ? unadjusted.indicators.find((r) => r.id === 'lhfa') : undefined;
+  const before = unadjustedLhfa(a, input);
   const after = a.indicators.find((r) => r.id === 'lhfa');
   if (!before?.band || before.z === null || !after?.band) return null;
   const changed = before.band !== after.band;
   const value = h('span', {}, ltr(`z ${fixed(before.z, 2)}`), ` · ${t(`band.${before.band}`)}`,
     changed ? h('span', { class: 'note' }, t('calc.without.changed', { band: t(`band.${after.band}`) })) : null);
-  return row(t('calc.without'), value, changed ? 'adjust changed' : '');
+  const el = row(t('calc.without'), value, changed ? 'adjust changed' : 'adjust');
+  el.setAttribute('data-testid', 'calc-without-correction');
+  return el;
 }
 
 function valueUsed(r: IndicatorResult): HTMLElement {

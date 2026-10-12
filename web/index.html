@@ -3,20 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>قياس · فحص نمو الطفل</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>قياس · فحص نمو الطفل</title>
   <meta name="description" content="Qiyas: WHO child growth check for parents, explained in Arabic and English." />
 </head>
 <body>
   <a class="skip" href="#growth-form" data-i18n="form.title"></a>
   <header class="top">
     <div class="brand">
-      <h1 data-i18n="app.title"></h1>
-      <p class="subtitle" data-i18n="app.subtitle"></p>
+      <svg class="logo" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
+        <rect x="1" y="1" width="46" height="46" rx="13" fill="#0f6b5c" />
+        <path d="M9 31.5c5.5-1 9-4.5 13-9.5s8-9 17-10" fill="none" stroke="#bfe5c8" stroke-width="3.2" stroke-linecap="round" />
+        <circle cx="39" cy="12" r="3.2" fill="#ffffff" />
+        <rect x="7" y="35" width="34" height="7" rx="2" fill="#ffffff" />
+        <path d="M12 35v3.5M17 35v2.2M22 35v3.5M27 35v2.2M32 35v3.5M37 35v2.2" stroke="#0f6b5c" stroke-width="1.6" stroke-linecap="round" />
+      </svg>
+      <div>
+        <h1 data-i18n="app.title"></h1>
+        <p class="subtitle" data-i18n="app.subtitle"></p>
+      </div>
     </div>
-    <button type="button" id="lang-toggle" class="btn btn-ghost" data-i18n="lang.toggle"></button>
+    <button type="button" id="lang-toggle" class="btn btn-lang" data-testid="lang-toggle">
+      <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" /></svg>
+      <span data-i18n="lang.toggle"></span>
+    </button>
   </header>
 
-  <main>
+  <main class="layout">
+    <div class="col-input">
     <p class="intro" data-i18n="intro.text"></p>
 
     <section class="card demo" aria-labelledby="demo-title">
@@ -28,6 +42,8 @@
     <form id="growth-form" class="card" novalidate>
       <h2 class="card-title" data-i18n="form.title"></h2>
 
+      <section class="step" aria-labelledby="step-1">
+      <h3 class="step-title" id="step-1"><span class="step-num" aria-hidden="true">1</span><span data-i18n="step.child"></span></h3>
       <fieldset class="field" data-field="sex">
         <legend data-i18n="form.sex"></legend>
         <div class="choices">
@@ -48,7 +64,10 @@
         <p id="months-hint" class="hint" data-i18n="form.ageMonthsHint"></p>
         <p class="field-error" data-error-for="age" hidden></p>
       </div>
+      </section>
 
+      <section class="step" aria-labelledby="step-2">
+      <h3 class="step-title" id="step-2"><span class="step-num" aria-hidden="true">2</span><span data-i18n="step.measure"></span></h3>
       <div class="field" data-field="visit">
         <label for="visit" data-i18n="form.visit"></label>
         <input type="date" id="visit" name="visit" autocomplete="off" />
@@ -85,9 +104,11 @@
         <p class="hint" data-i18n="form.positionHint"></p>
         <p class="field-error" data-error-for="position" hidden></p>
       </fieldset>
+      </section>
 
+      <section class="step step-flags" aria-labelledby="step-3">
+      <h3 class="step-title" id="step-3"><span class="step-num" aria-hidden="true">3</span><span data-i18n="form.redflags"></span></h3>
       <div class="field" data-field="redflags">
-        <h3 class="group-title" data-i18n="form.redflags"></h3>
         <p class="hint" data-i18n="form.redflagsHint"></p>
         <fieldset class="question">
           <legend data-i18n="rf.oedema"></legend>
@@ -112,15 +133,33 @@
         </fieldset>
         <p class="field-error" data-error-for="redflags" hidden></p>
       </div>
+      </section>
 
       <div class="actions">
-        <button type="submit" class="btn btn-primary" data-i18n="form.check"></button>
+        <button type="submit" class="btn btn-primary" data-testid="check-button" data-i18n="form.check"></button>
         <button type="button" id="clear-btn" class="btn btn-ghost" data-i18n="form.clear"></button>
       </div>
     </form>
 
-    <section id="result" class="card result" aria-live="polite" tabindex="-1" hidden></section>
-    <section id="ask" class="card ask" hidden></section>
+    </div>
+
+    <div class="col-output">
+      <section id="result-empty" class="card empty" aria-hidden="true">
+        <svg class="empty-art" viewBox="0 0 240 72" width="240" height="72" aria-hidden="true" focusable="false">
+          <rect x="4" y="30" width="30" height="16" rx="8" fill="#f6c9c9" />
+          <rect x="34" y="30" width="30" height="16" fill="#fbdca6" />
+          <rect x="64" y="30" width="120" height="16" fill="#bfe5c8" />
+          <rect x="184" y="30" width="52" height="16" rx="8" fill="#dcf0e0" />
+          <rect x="4" y="30" width="232" height="16" rx="8" fill="none" stroke="#0f6b5c" stroke-opacity="0.15" />
+          <path d="M124 14v48" stroke="#1f2933" stroke-width="3" stroke-linecap="round" />
+          <circle cx="124" cy="12" r="6" fill="#0f6b5c" />
+        </svg>
+        <h2 class="card-title" data-i18n="result.empty.title"></h2>
+        <p class="muted" data-i18n="result.empty.body"></p>
+      </section>
+      <section id="result" class="card result" data-testid="result" aria-live="polite" tabindex="-1" hidden></section>
+      <section id="ask" class="card ask" hidden></section>
+    </div>
   </main>
 
   <footer class="foot">
