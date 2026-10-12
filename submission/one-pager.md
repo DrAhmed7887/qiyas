@@ -41,6 +41,6 @@ Inputs (DOB, sex, weight, length, lying/standing)
 **Solo:** Dr. Ahmed Zayed — physician (12 yrs), physician-engineer, M.Sc. student, Applied Health Informatics & Digital Medicine (RWTH Aachen). Reviews and signs all clinical wording.
 
 - Prototype & video: [Devpost submission](https://devpost.com/)
-- Code: [github.com/DrAhmed7887/namaa](https://github.com/DrAhmed7887/namaa)
+- Code: [github.com/DrAhmed7887/qiyas](https://github.com/DrAhmed7887/qiyas)
 
 *Not a diagnosis. Uses WHO Child Growth Standards (2006). Nothing you enter is stored.*

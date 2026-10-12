@@ -68,7 +68,7 @@ Citation: WHO Multicentre Growth Reference Study Group. *WHO Child Growth Standa
 | What | Where |
 |---|---|
 | Code (working copy) | `~/Projects/hackathons/2026-10-univabio-namaa` on the MacBook Pro |
-| Code (source of truth) | GitHub `DrAhmed7887/namaa` (private until submission) |
+| Code (source of truth) | GitHub `DrAhmed7887/qiyas` (private until submission) |
 | Video, PDF, screenshots | Google Drive `Zayed OS/Hackathons/2026-10-univabio-namaa/` |
 | Tracking | Notion → 🇪🇺 EU Opportunity Scout → UnivaBio row |
 
