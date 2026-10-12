@@ -143,3 +143,17 @@ describe('overall urgency from real bands', () => {
     expect(r.overall).toBe('see_soon');
   });
 });
+
+describe('length-for-age uses the unrounded length (only the wfl/wfh key is rounded)', () => {
+  it('70.96 cm at 365 days reads low, not normal as 71.0 cm would', () => {
+    const r = assess({
+      sex: 'boys', ageMonths: 365 / 30.4375, weightKg: 9, lengthCm: 70.96, position: 'lying',
+      redFlags: { oedema: false, weakOrNotFeeding: false, recentWeightLoss: false },
+    });
+    if (!r.ok) throw new Error('expected ok');
+    const lhfa = r.indicators.find((i) => i.id === 'lhfa');
+    expect(lhfa?.value).toBe(70.96);
+    expect(lhfa?.band).toBe('low');
+    expect(r.indicators.find((i) => i.id === 'wflh')?.lookupKey).toBe(710);
+  });
+});

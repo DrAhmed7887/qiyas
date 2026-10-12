@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>قياس · فحص نمو الطفل</title>
+  <meta name="description" content="Qiyas: WHO child growth check for parents, explained in Arabic and English." />
+</head>
+<body>
+  <a class="skip" href="#growth-form" data-i18n="form.title"></a>
+  <header class="top">
+    <div class="brand">
+      <h1 data-i18n="app.title"></h1>
+      <p class="subtitle" data-i18n="app.subtitle"></p>
+    </div>
+    <button type="button" id="lang-toggle" class="btn btn-ghost" data-i18n="lang.toggle"></button>
+  </header>
+
+  <main>
+    <p class="intro" data-i18n="intro.text"></p>
+
+    <section class="card demo" aria-labelledby="demo-title">
+      <h2 id="demo-title" class="card-title" data-i18n="demo.title"></h2>
+      <p class="muted" data-i18n="demo.note"></p>
+      <div id="demo-buttons" class="demo-buttons"></div>
+    </section>
+
+    <form id="growth-form" class="card" novalidate>
+      <h2 class="card-title" data-i18n="form.title"></h2>
+
+      <fieldset class="field" data-field="sex">
+        <legend data-i18n="form.sex"></legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="sex" value="boys" /><span data-i18n="form.sex.boys"></span></label>
+          <label class="choice"><input type="radio" name="sex" value="girls" /><span data-i18n="form.sex.girls"></span></label>
+        </div>
+        <p class="field-error" data-error-for="sex" hidden></p>
+      </fieldset>
+
+      <div class="field" data-field="age">
+        <label for="dob" data-i18n="form.dob"></label>
+        <input type="date" id="dob" name="dob" autocomplete="off" />
+        <p class="or" data-i18n="form.or"></p>
+        <label for="months" data-i18n="form.ageMonths"></label>
+        <div class="input-wrap">
+          <input type="text" id="months" name="months" inputmode="decimal" autocomplete="off" aria-describedby="months-hint" />
+        </div>
+        <p id="months-hint" class="hint" data-i18n="form.ageMonthsHint"></p>
+        <p class="field-error" data-error-for="age" hidden></p>
+      </div>
+
+      <div class="field" data-field="visit">
+        <label for="visit" data-i18n="form.visit"></label>
+        <input type="date" id="visit" name="visit" autocomplete="off" />
+        <p class="field-error" data-error-for="visit" hidden></p>
+      </div>
+
+      <div class="row-2">
+        <div class="field" data-field="weight">
+          <label for="weight" data-i18n="form.weight"></label>
+          <div class="input-wrap">
+            <input type="text" id="weight" name="weight" inputmode="decimal" autocomplete="off" aria-describedby="weight-hint" />
+            <span class="unit" data-i18n="unit.kg"></span>
+          </div>
+          <p id="weight-hint" class="hint" data-i18n="form.weightHint"></p>
+          <p class="field-error" data-error-for="weight" hidden></p>
+        </div>
+        <div class="field" data-field="length">
+          <label for="length" data-i18n="form.length"></label>
+          <div class="input-wrap">
+            <input type="text" id="length" name="length" inputmode="decimal" autocomplete="off" aria-describedby="length-hint" />
+            <span class="unit" data-i18n="unit.cm"></span>
+          </div>
+          <p id="length-hint" class="hint" data-i18n="form.lengthHint"></p>
+          <p class="field-error" data-error-for="length" hidden></p>
+        </div>
+      </div>
+
+      <fieldset class="field" data-field="position">
+        <legend data-i18n="form.position"></legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="position" value="lying" /><span data-i18n="form.position.lying"></span></label>
+          <label class="choice"><input type="radio" name="position" value="standing" /><span data-i18n="form.position.standing"></span></label>
+        </div>
+        <p class="hint" data-i18n="form.positionHint"></p>
+        <p class="field-error" data-error-for="position" hidden></p>
+      </fieldset>
+
+      <div class="field" data-field="redflags">
+        <h3 class="group-title" data-i18n="form.redflags"></h3>
+        <p class="hint" data-i18n="form.redflagsHint"></p>
+        <fieldset class="question">
+          <legend data-i18n="rf.oedema"></legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="oedema" value="yes" /><span data-i18n="form.yes"></span></label>
+            <label class="choice"><input type="radio" name="oedema" value="no" /><span data-i18n="form.no"></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="question">
+          <legend data-i18n="rf.weak"></legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="weak" value="yes" /><span data-i18n="form.yes"></span></label>
+            <label class="choice"><input type="radio" name="weak" value="no" /><span data-i18n="form.no"></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="question">
+          <legend data-i18n="rf.loss"></legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="loss" value="yes" /><span data-i18n="form.yes"></span></label>
+            <label class="choice"><input type="radio" name="loss" value="no" /><span data-i18n="form.no"></span></label>
+          </div>
+        </fieldset>
+        <p class="field-error" data-error-for="redflags" hidden></p>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" data-i18n="form.check"></button>
+        <button type="button" id="clear-btn" class="btn btn-ghost" data-i18n="form.clear"></button>
+      </div>
+    </form>
+
+    <section id="result" class="card result" aria-live="polite" tabindex="-1" hidden></section>
+  </main>
+
+  <footer class="foot">
+    <p data-i18n="footer.text"></p>
+    <p>
+      <a href="https://www.who.int/tools/child-growth-standards/standards" target="_blank" rel="noopener noreferrer" data-i18n="footer.source"></a>
+    </p>
+    <p class="muted" data-i18n="footer.repo"></p>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -45,6 +45,8 @@ describe('lying / standing rule at 731 days (group c)', () => {
     expect(adjustLength(80.1, 0.7)).toBe(80.8);
     expect(adjustLength(95.3, -0.7)).toBe(94.6);
     expect(adjustLength(70, 0)).toBe(70);
+    expect(adjustLength(70.96, 0)).toBe(70.96); // keeps hundredths: only the table key is rounded
+    expect(adjustLength(70.26, 0.7)).toBe(70.96);
   });
 });
 

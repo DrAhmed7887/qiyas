@@ -43,9 +43,12 @@ export function lengthAdjustment(ageDays: number, position: Position): 0 | 0.7 |
   return 0;
 }
 
-/** Adds the adjustment and keeps one decimal, so 80.1 + 0.7 is 80.8 and not 80.80000000000001. */
+/**
+ * Adds the adjustment, keeping hundredths (80.1 + 0.7 is 80.8, not 80.80000000000001).
+ * Only the wfl/wfh table key is rounded to 0.1 cm; length-for-age uses this value as is.
+ */
 export function adjustLength(measuredCm: number, adjustmentCm: number): number {
-  return Math.round((measuredCm + adjustmentCm) * 10) / 10;
+  return Math.round((measuredCm + adjustmentCm) * 100) / 100;
 }
 
 /** Weight-for-length below 731 days, weight-for-height from 731 days. Chosen by age only. */

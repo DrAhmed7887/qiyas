@@ -11,3 +11,4 @@ __pycache__/
 *.pdf
 .DS_Store
 coverage/
+submission/screenshots/
