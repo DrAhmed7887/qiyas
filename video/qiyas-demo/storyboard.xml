@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Qiyas demo video for Devpost (UnivaBio 2026). Source script: submission/video-script.md (v2).
+  Real before stylized: every app shot comes from video/captures/ (automated Playwright captures of the real build).
+  The only generated footage is open-1 (Flow / Veo), labelled "Illustration" on screen.
+  The narrator is Gemini TTS, so the VO speaks about Ahmed in the third person and the end card says the voice is synthetic.
+-->
+<video>
+  <metadata>
+    <title>Qiyas: the measurement, explained</title>
+    <slug>qiyas-demo</slug>
+    <duration_seconds>138</duration_seconds>
+    <aspect_ratio>16:9</aspect_ratio>
+    <engine_hint>remotion</engine_hint>
+    <audience>Devpost hackathon judges, mostly software engineers, scoring innovation, implementation, health rigor, design and honest presentation.</audience>
+    <intent>The viewer should leave knowing that Qiyas turns WHO growth maths into a plain Arabic/English answer, corrects how the child was measured, keeps safety rules in deterministic code, and shows its working.</intent>
+  </metadata>
+
+  <scenes>
+    <scene id="open" duration="12">
+      <intent>Name the real-world measurement problem before naming the product.</intent>
+      <shots>
+        <shot id="open-1" duration="6">
+          <visual>Flow / Veo clip: a parent at home measuring a toddler standing against a wall with a tape measure. Generic, no face close-up. Corner label "Illustration (AI-generated)".</visual>
+          <text>Illustration (AI-generated)</text>
+          <motion>Clip plays at native speed; slow 1.05x push-in; label fades in at 0.3s.</motion>
+          <voiceover>At home, a toddler might be measured standing against a wall.</voiceover>
+        </shot>
+        <shot id="open-2" duration="6">
+          <visual>captures: hero still, Arabic, desktop 1920x1080 (empty page with logo and three demo buttons).</visual>
+          <text>قياس · Qiyas: the measurement, explained</text>
+          <motion>Cross-fade from the clip; logo settles; title types on.</motion>
+          <voiceover>But WHO measures children under two lying down. Qiyas checks the difference.</voiceover>
+        </shot>
+      </shots>
+    </scene>
+
+    <scene id="correction" duration="25">
+      <intent>The wow beat: the 0.7 cm correction moves the child across a WHO cut-off, and the app shows why.</intent>
+      <shots>
+        <shot id="corr-1" duration="6">
+          <visual>captures: clip (a), click on Example 1 in the Arabic UI; result appears.</visual>
+          <text>Synthetic example</text>
+          <motion>Real clip; click ripple on the demo button; result card slides in.</motion>
+          <voiceover>A synthetic example: a boy, 607 days old, 78 centimetres, measured standing.</voiceover>
+        </shot>
+        <shot id="corr-2" duration="8">
+          <visual>captures: zscale-lhfa close-up. Ghost marker at z −2.19 in the amber zone.</visual>
+          <text>Without correction: z −2.19</text>
+          <motion>Zoom from full viewport into the zscale-lhfa bounding box (manifest); hold on the ghost marker; the −2 line pulses once at 5s.</motion>
+          <voiceover>Measured as entered, length for age reads z minus 2.19: below the usual range.</voiceover>
+        </shot>
+        <shot id="corr-3" duration="7">
+          <visual>captures: clip (a) marker slide, then the calc-without-correction element shot (+0.7 cm step highlighted).</visual>
+          <text>+0.7 cm (WHO rule) → z −1.94</text>
+          <motion>Marker slides from −2.19 across −2 to −1.94 (real recorded animation); cut to the fold step list; the +0.7 cm row highlights.</motion>
+          <voiceover>WHO adds 0.7 centimetres for standing under two. Now it reads minus 1.94, in the usual range.</voiceover>
+        </shot>
+        <shot id="corr-4" duration="4">
+          <visual>Text card over a blurred correction still.</visual>
+          <text>Same child. Same tape measure.</text>
+          <motion>Background blurs to 12px; two lines fade in with 400ms stagger.</motion>
+          <voiceover>Same child. Same tape measure.</voiceover>
+        </shot>
+      </shots>
+    </scene>
+
+    <scene id="language" duration="7">
+      <intent>Show bilingual parity without spending time on it.</intent>
+      <shots>
+        <shot id="lang-1" duration="7">
+          <visual>captures: clip (b), AR→EN toggle on the correction result with the fold open.</visual>
+          <text>العربية ⇄ English</text>
+          <motion>Real clip; at 3s a thin outline highlights z −1.94 in both languages.</motion>
+          <voiceover>Switch to English. Every number stays exactly the same.</voiceover>
+        </shot>
+      </shots>
+    </scene>
+
+    <scene id="safety" duration="25">
+      <intent>Prove the safety rule: a warning sign overrides everything, and implausible numbers are never shown.</intent>
+      <shots>
+        <shot id="safe-1" duration="7">
+          <visual>captures: clip (c), click on Example 2; red urgent block above an amber re-measure block.</visual>
+          <text>Implausible value → re-measure</text>
+          <motion>Real clip; amber block outline pulses once at 4s.</motion>
+          <voiceover>Now a harder case. The weight entered is implausible, so Qiyas shows no number.</voiceover>
+        </shot>
+        <shot id="safe-2" duration="8">
+          <visual>captures: redflag result still (English), zoom to block-urgent.</visual>
+          <text>Swelling of both feet: yes</text>
+          <motion>Zoom into the block-urgent bounding box; "Swelling of both feet" underlines at 3s.</motion>
+          <voiceover>But the parent answered yes: swelling of both feet. That is a warning sign, whatever the numbers say.</voiceover>
+        </shot>
+        <shot id="safe-3" duration="6">
+          <visual>captures: same still, zoomed out to show urgent block first, re-measure second.</visual>
+          <text>See a health worker today</text>
+          <motion>Zoom out 1.0x; urgent block gets a soft glow.</motion>
+          <voiceover>So the first thing on screen is: see a health worker today. No diagnosis.</voiceover>
+        </shot>
+        <shot id="safe-4" duration="4">
+          <visual>captures: normal result still (Arabic), all bars green.</visual>
+          <text>Typical result</text>
+          <motion>Hard cut; bars already settled.</motion>
+          <voiceover>A typical child: no alarm. Keep up regular check-ups.</voiceover>
+        </shot>
+      </shots>
+    </scene>
+
+    <scene id="ai" duration="11">
+      <intent>Show the bounded AI feature honestly: optional, fixed question, below the fixed result.</intent>
+      <shots>
+        <shot id="ai-1" duration="11">
+          <visual>captures: AI clip (ask-button → ask-answer), captured with the local AI server before 18 Oct. TODO: capture with CAPTURE_AI=1.</visual>
+          <text>Optional AI · fixed question · result unchanged</text>
+          <motion>Real clip; at 6s a bracket marks the result card above as "fixed by code".</motion>
+          <voiceover>One optional AI feature answers a fixed question from the approved text. It sits below the result and is not wired to it.</voiceover>
+        </shot>
+      </shots>
+    </scene>
+
+    <scene id="proof" duration="26">
+      <intent>Engineer proof: WHO's own data, the test that round-trips WHO's rows, and the plain-code safety boundary.</intent>
+      <shots>
+        <shot id="proof-1" duration="8">
+          <visual>captures: who-source-snippet.txt rendered as a code card (lhfa_boys.json, source URL highlighted).</visual>
+          <text>data/who/lhfa_boys.json</text>
+          <motion>Code card slides up; the "source" URL line highlights at 2s.</motion>
+          <voiceover>The data is WHO's own expanded tables, downloaded from WHO, values unmodified.</voiceover>
+        </shot>
+        <shot id="proof-2" duration="10">
+          <visual>captures: test-summary.txt rendered as a terminal card.</visual>
+          <text>134 tests passing</text>
+          <motion>Terminal lines type on at reading speed; "134 passed" turns green at 6s.</motion>
+          <voiceover>The tests feed WHO's own table rows back through the engine and expect minus three to plus three. 134 tests pass.</voiceover>
+        </shot>
+        <shot id="proof-3" duration="8">
+          <visual>Code card: overallUrgency from web/src/growth/bands.ts, read from the file at render time (real code, not retyped).</visual>
+          <text>web/src/growth/bands.ts</text>
+          <motion>Card cross-fades; the "if (urgent) return 'urgent'" line highlights at 2s.</motion>
+          <voiceover>Bands and the urgent action come from WHO cut-offs in plain code. No AI in the maths.</voiceover>
+        </shot>
+      </shots>
+    </scene>
+
+    <scene id="scope" duration="15">
+      <intent>Honest finished vs planned.</intent>
+      <shots>
+        <shot id="scope-1" duration="8">
+          <visual>Two-column card, left column "Shipped".</visual>
+          <text>Shipped: 3 WHO indicators · ages 0–5 · Arabic + English</text>
+          <motion>Items appear one by one, 300ms stagger.</motion>
+          <voiceover>Shipped: three WHO indicators, ages zero to five, Arabic and English.</voiceover>
+        </shot>
+        <shot id="scope-2" duration="7">
+          <visual>Same card, right column "Not in this build" fills in.</visual>
+          <text>Not yet: BMI · ages 5–19 · multi-visit tracking · native app</text>
+          <motion>Items appear one by one, 300ms stagger, in a muted colour.</motion>
+          <voiceover>Not shipped: BMI, school-age children, tracking over visits, a native app.</voiceover>
+        </shot>
+      </shots>
+    </scene>
+
+    <scene id="close" duration="17">
+      <intent>Pitch line, credit prior art, the link, and who built it.</intent>
+      <shots>
+        <shot id="close-1" duration="8">
+          <visual>captures: hero still, blurred, with the pitch line centred.</visual>
+          <text>WHO did the math. Parents need the meaning.</text>
+          <motion>Line types on; credits fade in below at 4s: "Prior art: WHO Anthro · UNICEF Bebbo".</motion>
+          <voiceover>WHO did the math. Parents need the meaning. Credit to WHO Anthro and UNICEF's Bebbo, who came first.</voiceover>
+        </shot>
+        <shot id="close-2" duration="9">
+          <visual>End card: logo, drahmed7887.github.io/qiyas, "Dr. Ahmed Zayed, physician-engineer", small print "Prototype, not a diagnosis · Voiceover: synthetic (Gemini TTS)".</visual>
+          <text>drahmed7887.github.io/qiyas</text>
+          <motion>URL underline draws on; hold to the end.</motion>
+          <voiceover>Built by Dr. Ahmed Zayed, a physician and engineer. A prototype, not a diagnosis. Try it at the link below.</voiceover>
+        </shot>
+      </shots>
+    </scene>
+  </scenes>
+
+  <captions src="captions.srt"/>
+  <notes>
+    Every app visual comes from video/captures/ (npm run capture). Re-run the capture after any UI change; never mock a screen.
+    The test count (134) is spoken; if npm test reports a different number, update proof-2 and regenerate the TTS.
+    No unsourced claims: "might be measured standing" is deliberately not a frequency claim.
+  </notes>
+</video>

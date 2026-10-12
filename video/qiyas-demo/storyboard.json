@@ -1,0 +1,220 @@
+wrote /Users/ahmedzayed/Projects/hackathons/2026-10-univabio-namaa/.claude/worktrees/hackathon-winning-strategy-567129/video/qiyas-demo/storyboard.json
+   "engine_hint": "remotion",
+    "audience": "Devpost hackathon judges, mostly software engineers, scoring innovation, implementation, health rigor, design and honest presentation.",
+    "intent": "The viewer should leave knowing that Qiyas turns WHO growth maths into a plain Arabic/English answer, corrects how the child was measured, keeps safety rules in deterministic code, and shows its working."
+  },
+  "scenes": [
+    {
+      "id": "open",
+      "duration": 12,
+      "intent": "Name the real-world measurement problem before naming the product.",
+      "shots": [
+        {
+          "id": "open-1",
+          "duration": 6,
+          "visual": "Flow / Veo clip: a parent at home measuring a toddler standing against a wall with a tape measure. Generic, no face close-up. Corner label \"Illustration (AI-generated)\".",
+          "text": "Illustration (AI-generated)",
+          "motion": "Clip plays at native speed; slow 1.05x push-in; label fades in at 0.3s.",
+          "voiceover": "At home, a toddler might be measured standing against a wall."
+        },
+        {
+          "id": "open-2",
+          "duration": 6,
+          "visual": "captures: hero still, Arabic, desktop 1920x1080 (empty page with logo and three demo buttons).",
+          "text": "قياس · Qiyas: the measurement, explained",
+          "motion": "Cross-fade from the clip; logo settles; title types on.",
+          "voiceover": "But WHO measures children under two lying down. Qiyas checks the difference."
+        }
+      ]
+    },
+    {
+      "id": "correction",
+      "duration": 25,
+      "intent": "The wow beat: the 0.7 cm correction moves the child across a WHO cut-off, and the app shows why.",
+      "shots": [
+        {
+          "id": "corr-1",
+          "duration": 6,
+          "visual": "captures: clip (a), click on Example 1 in the Arabic UI; result appears.",
+          "text": "Synthetic example",
+          "motion": "Real clip; click ripple on the demo button; result card slides in.",
+          "voiceover": "A synthetic example: a boy, 607 days old, 78 centimetres, measured standing."
+        },
+        {
+          "id": "corr-2",
+          "duration": 8,
+          "visual": "captures: zscale-lhfa close-up. Ghost marker at z −2.19 in the amber zone.",
+          "text": "Without correction: z −2.19",
+          "motion": "Zoom from full viewport into the zscale-lhfa bounding box (manifest); hold on the ghost marker; the −2 line pulses once at 5s.",
+          "voiceover": "Measured as entered, length for age reads z minus 2.19: below the usual range."
+        },
+        {
+          "id": "corr-3",
+          "duration": 7,
+          "visual": "captures: clip (a) marker slide, then the calc-without-correction element shot (+0.7 cm step highlighted).",
+          "text": "+0.7 cm (WHO rule) → z −1.94",
+          "motion": "Marker slides from −2.19 across −2 to −1.94 (real recorded animation); cut to the fold step list; the +0.7 cm row highlights.",
+          "voiceover": "WHO adds 0.7 centimetres for standing under two. Now it reads minus 1.94, in the usual range."
+        },
+        {
+          "id": "corr-4",
+          "duration": 4,
+          "visual": "Text card over a blurred correction still.",
+          "text": "Same child. Same tape measure.",
+          "motion": "Background blurs to 12px; two lines fade in with 400ms stagger.",
+          "voiceover": "Same child. Same tape measure."
+        }
+      ]
+    },
+    {
+      "id": "language",
+      "duration": 7,
+      "intent": "Show bilingual parity without spending time on it.",
+      "shots": [
+        {
+          "id": "lang-1",
+          "duration": 7,
+          "visual": "captures: clip (b), AR→EN toggle on the correction result with the fold open.",
+          "text": "العربية ⇄ English",
+          "motion": "Real clip; at 3s a thin outline highlights z −1.94 in both languages.",
+          "voiceover": "Switch to English. Every number stays exactly the same."
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "duration": 25,
+      "intent": "Prove the safety rule: a warning sign overrides everything, and implausible numbers are never shown.",
+      "shots": [
+        {
+          "id": "safe-1",
+          "duration": 7,
+          "visual": "captures: clip (c), click on Example 2; red urgent block above an amber re-measure block.",
+          "text": "Implausible value → re-measure",
+          "motion": "Real clip; amber block outline pulses once at 4s.",
+          "voiceover": "Now a harder case. The weight entered is implausible, so Qiyas shows no number."
+        },
+        {
+          "id": "safe-2",
+          "duration": 8,
+          "visual": "captures: redflag result still (English), zoom to block-urgent.",
+          "text": "Swelling of both feet: yes",
+          "motion": "Zoom into the block-urgent bounding box; \"Swelling of both feet\" underlines at 3s.",
+          "voiceover": "But the parent answered yes: swelling of both feet. That is a warning sign, whatever the numbers say."
+        },
+        {
+          "id": "safe-3",
+          "duration": 6,
+          "visual": "captures: same still, zoomed out to show urgent block first, re-measure second.",
+          "text": "See a health worker today",
+          "motion": "Zoom out 1.0x; urgent block gets a soft glow.",
+          "voiceover": "So the first thing on screen is: see a health worker today. No diagnosis."
+        },
+        {
+          "id": "safe-4",
+          "duration": 4,
+          "visual": "captures: normal result still (Arabic), all bars green.",
+          "text": "Typical result",
+          "motion": "Hard cut; bars already settled.",
+          "voiceover": "A typical child: no alarm. Keep up regular check-ups."
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "duration": 11,
+      "intent": "Show the bounded AI feature honestly: optional, fixed question, below the fixed result.",
+      "shots": [
+        {
+          "id": "ai-1",
+          "duration": 11,
+          "visual": "captures: AI clip (ask-button → ask-answer), captured with the local AI server before 18 Oct. TODO: capture with CAPTURE_AI=1.",
+          "text": "Optional AI · fixed question · result unchanged",
+          "motion": "Real clip; at 6s a bracket marks the result card above as \"fixed by code\".",
+          "voiceover": "One optional AI feature answers a fixed question from the approved text. It sits below the result and is not wired to it."
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "duration": 26,
+      "intent": "Engineer proof: WHO's own data, the test that round-trips WHO's rows, and the plain-code safety boundary.",
+      "shots": [
+        {
+          "id": "proof-1",
+          "duration": 8,
+          "visual": "captures: who-source-snippet.txt rendered as a code card (lhfa_boys.json, source URL highlighted).",
+          "text": "data/who/lhfa_boys.json",
+          "motion": "Code card slides up; the \"source\" URL line highlights at 2s.",
+          "voiceover": "The data is WHO's own expanded tables, downloaded from WHO, values unmodified."
+        },
+        {
+          "id": "proof-2",
+          "duration": 10,
+          "visual": "captures: test-summary.txt rendered as a terminal card.",
+          "text": "134 tests passing",
+          "motion": "Terminal lines type on at reading speed; \"134 passed\" turns green at 6s.",
+          "voiceover": "The tests feed WHO's own table rows back through the engine and expect minus three to plus three. 134 tests pass."
+        },
+        {
+          "id": "proof-3",
+          "duration": 8,
+          "visual": "Code card: overallUrgency from web/src/growth/bands.ts, read from the file at render time (real code, not retyped).",
+          "text": "web/src/growth/bands.ts",
+          "motion": "Card cross-fades; the \"if (urgent) return 'urgent'\" line highlights at 2s.",
+          "voiceover": "Bands and the urgent action come from WHO cut-offs in plain code. No AI in the maths."
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "duration": 15,
+      "intent": "Honest finished vs planned.",
+      "shots": [
+        {
+          "id": "scope-1",
+          "duration": 8,
+          "visual": "Two-column card, left column \"Shipped\".",
+          "text": "Shipped: 3 WHO indicators · ages 0–5 · Arabic + English",
+          "motion": "Items appear one by one, 300ms stagger.",
+          "voiceover": "Shipped: three WHO indicators, ages zero to five, Arabic and English."
+        },
+        {
+          "id": "scope-2",
+          "duration": 7,
+          "visual": "Same card, right column \"Not in this build\" fills in.",
+          "text": "Not yet: BMI · ages 5–19 · multi-visit tracking · native app",
+          "motion": "Items appear one by one, 300ms stagger, in a muted colour.",
+          "voiceover": "Not shipped: BMI, school-age children, tracking over visits, a native app."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "duration": 17,
+      "intent": "Pitch line, credit prior art, the link, and who built it.",
+      "shots": [
+        {
+          "id": "close-1",
+          "duration": 8,
+          "visual": "captures: hero still, blurred, with the pitch line centred.",
+          "text": "WHO did the math. Parents need the meaning.",
+          "motion": "Line types on; credits fade in below at 4s: \"Prior art: WHO Anthro · UNICEF Bebbo\".",
+          "voiceover": "WHO did the math. Parents need the meaning. Credit to WHO Anthro and UNICEF's Bebbo, who came first."
+        },
+        {
+          "id": "close-2",
+          "duration": 9,
+          "visual": "End card: logo, drahmed7887.github.io/qiyas, \"Dr. Ahmed Zayed, physician-engineer\", small print \"Prototype, not a diagnosis · Voiceover: synthetic (Gemini TTS)\".",
+          "text": "drahmed7887.github.io/qiyas",
+          "motion": "URL underline draws on; hold to the end.",
+          "voiceover": "Built by Dr. Ahmed Zayed, a physician and engineer. A prototype, not a diagnosis. Try it at the link below."
+        }
+      ]
+    }
+  ],
+  "captions": {
+    "src": "captions.srt"
+  },
+  "notes": "Every app visual comes from video/captures/ (npm run capture). Re-run the capture after any UI change; never mock a screen.\n    The test count (134) is spoken; if npm test reports a different number, update proof-2 and regenerate the TTS.\n    No unsourced claims: \"might be measured standing\" is deliberately not a frequency claim."
+}

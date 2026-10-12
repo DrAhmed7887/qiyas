@@ -12,3 +12,4 @@ __pycache__/
 .DS_Store
 coverage/
 submission/screenshots/
+video/captures/
