@@ -1,6 +1,6 @@
 # Plan
 
-**Deadline:** treat **Tue 13 Oct 2026, evening** as the deadline. Devpost's countdown says 20 Oct 23:45 EDT, but a "3 days left" update on 10 Oct points to about 13 Oct. The rules page still says 7 Oct.
+**Deadline:** **Wed 21 Oct 2026, 03:45 UTC (05:45 Madrid)**, confirmed on Devpost on 12 Oct. Internal target: submitted by **Sat 17 Oct** (Aachen block 19–23 Oct).
 **Submission needs:** working prototype · demo video · one-page PDF · GitHub repo or code PDF.
 **Judging (5 points each):** Idea & Innovation · Implementation · Health Impact & Rigor · Design & Usability · Presentation (honest about what's finished vs planned).
 

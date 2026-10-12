@@ -6,7 +6,7 @@
 
 - **Owner:** Dr. Ahmed Zayed: physician (12 years), physician-engineer, RWTH Aachen M.Sc. Health Informatics student. He reviews all clinical wording and signs off on it.
 - **Event:** UnivaBio 2026 on Devpost, theme "Artificial Intelligence for Human Health" (detect illness earlier, understand it better, or live with it more easily).
-- **Deadline:** treat it as **Tue 13 Oct 2026, 18:00 Europe/Madrid**. Internal target: **submitted by 15:00**. Ahmed checks the live Devpost page tonight.
+- **Deadline:** **Wed 21 Oct 2026, 03:45 UTC (05:45 Madrid)**, confirmed on the live Devpost page on 12 Oct. Ahmed is in Aachen 19–23 Oct, so the internal target is **submitted by Sat 17 Oct**.
 - **Judging (5 points each):** Idea & Innovation · Implementation · Health Impact & Rigor · Design & Usability · Presentation ("honest about what's finished vs planned"). The judges are mostly software engineers. Ahmed must be able to walk them through the code, so keep it readable.
 - **Required submission:** an interactive prototype, a demo video, a one-page PDF, and the GitHub repo or a PDF of the code. The rules require a "novel creation", so everything in this repo is new work.
 
