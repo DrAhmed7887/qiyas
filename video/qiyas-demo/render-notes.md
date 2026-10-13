@@ -10,3 +10,11 @@
 6. Master MP4 goes to Drive `Zayed OS/Hackathons/2026-10-univabio-namaa/`, then YouTube (unlisted). Never commit the MP4 (`*.mp4` is git-ignored).
 
 Gotchas: the z-scale marker animates ~900 ms after a result renders; captures already wait 1.2 s. If the TTS for a shot runs longer than the shot, lengthen the shot in `storyboard.xml` first, then regenerate everything downstream.
+
+## Re-voicing (Gemini TTS)
+
+Generate one take in AI Studio (Gemini 3.8 Flash TTS, voice "Fola", style: calm documentary narrator, one paragraph per shot, "WHO" written as "W.H.O."), download the WAV, then:
+
+    python3 -I scripts/split_vo.py <downloaded.wav> <ggml-base.en.bin>
+
+It prints what whisper hears in every segment: check each line matches its shot. If a segment is longer than its shot, lengthen the shot in storyboard.xml (shot ≥ audio + 0.2 s), then re-time captions.srt and render.

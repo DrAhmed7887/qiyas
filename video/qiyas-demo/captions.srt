@@ -1,75 +1,75 @@
 1
-00:00:00,050 --> 00:00:03,713
+00:00:00,050 --> 00:00:03,663
 At home, a toddler might be measured standing against a wall.
 
 2
-00:00:06,050 --> 00:00:10,778
+00:00:06,050 --> 00:00:10,748
 But WHO measures children under two lying down. Qiyas checks the difference.
 
 3
-00:00:12,050 --> 00:00:18,160
+00:00:12,050 --> 00:00:19,229
 A synthetic example: a boy, 607 days old, 78 centimetres, measured standing.
 
 4
-00:00:19,050 --> 00:00:25,732
+00:00:20,050 --> 00:00:26,753
 Measured as entered, length for age reads z minus 2.19: below the usual range.
 
 5
-00:00:27,050 --> 00:00:32,917
+00:00:28,050 --> 00:00:36,569
 WHO adds 0.7 centimetres for standing under two. Now it reads minus 1.94, in the usual range.
 
 6
-00:00:34,050 --> 00:00:36,425
+00:00:37,050 --> 00:00:38,920
 Same child. Same tape measure.
 
 7
-00:00:38,050 --> 00:00:41,485
+00:00:41,050 --> 00:00:44,839
 Switch to English. Every number stays exactly the same.
 
 8
-00:00:45,050 --> 00:00:51,472
+00:00:48,050 --> 00:00:53,869
 Now a harder case. The weight entered is implausible, so Qiyas shows no number.
 
 9
-00:00:52,050 --> 00:00:59,350
+00:00:55,050 --> 00:01:00,804
 But the parent answered yes: swelling of both feet. That is a warning sign, whatever the numbers say.
 
 10
-00:01:00,050 --> 00:01:05,846
+00:01:03,050 --> 00:01:08,095
 So the first thing on screen is: see a health worker today. No diagnosis.
 
 11
-00:01:07,050 --> 00:01:10,949
+00:01:10,050 --> 00:01:14,802
 A typical child: no alarm. Keep up regular check-ups.
 
 12
-00:01:12,050 --> 00:01:21,148
+00:01:16,050 --> 00:01:23,551
 One optional AI feature answers a fixed question from the approved text. It sits below the result and is not wired to it.
 
 13
-00:01:23,050 --> 00:01:28,324
+00:01:27,050 --> 00:01:33,050
 The data is WHO's own expanded tables, downloaded from WHO, values unmodified.
 
 14
-00:01:31,050 --> 00:01:40,336
+00:01:35,050 --> 00:01:43,354
 The tests feed WHO's own table rows back through the engine and expect minus three to plus three. 134 tests pass.
 
 15
-00:01:41,050 --> 00:01:47,120
+00:01:45,050 --> 00:01:50,434
 Bands and the urgent action come from WHO cut-offs in plain code. No AI in the maths.
 
 16
-00:01:49,050 --> 00:01:54,358
+00:01:53,050 --> 00:01:58,328
 Shipped: three WHO indicators, ages zero to five, Arabic and English.
 
 17
-00:01:57,050 --> 00:02:02,565
+00:02:01,050 --> 00:02:06,535
 Not shipped: BMI, school-age children, tracking over visits, a native app.
 
 18
-00:02:04,050 --> 00:02:11,386
+00:02:08,050 --> 00:02:15,356
 WHO did the math. Parents need the meaning. Credit to WHO Anthro and UNICEF's Bebbo, who came first.
 
 19
-00:02:12,050 --> 00:02:19,511
+00:02:16,050 --> 00:02:23,552
 Built by Dr. Ahmed Zayed, a physician and engineer. A prototype, not a diagnosis. Try it at the link below.

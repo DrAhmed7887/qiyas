@@ -9,7 +9,7 @@
   <metadata>
     <title>Qiyas: the measurement, explained</title>
     <slug>qiyas-demo</slug>
-    <duration_seconds>141</duration_seconds>
+    <duration_seconds>145</duration_seconds>
     <aspect_ratio>16:9</aspect_ratio>
     <engine_hint>remotion</engine_hint>
     <audience>Devpost hackathon judges, mostly software engineers, scoring innovation, implementation, health rigor, design and honest presentation.</audience>
@@ -35,10 +35,10 @@
       </shots>
     </scene>
 
-    <scene id="correction" duration="26">
+    <scene id="correction" duration="29">
       <intent>The wow beat: the 0.7 cm correction moves the child across a WHO cut-off, and the app shows why.</intent>
       <shots>
-        <shot id="corr-1" duration="7">
+        <shot id="corr-1" duration="8">
           <visual>captures: clip (a), click on Example 1 in the Arabic UI; result appears.</visual>
           <text>Synthetic example</text>
           <motion>Real clip; click ripple on the demo button; result card slides in.</motion>
@@ -50,7 +50,7 @@
           <motion>Zoom from full viewport into the zscale-lhfa bounding box (manifest); hold on the ghost marker; the −2 line pulses once at 5s.</motion>
           <voiceover>Measured as entered, length for age reads z minus 2.19: below the usual range.</voiceover>
         </shot>
-        <shot id="corr-3" duration="7">
+        <shot id="corr-3" duration="9">
           <visual>captures: clip (a) marker slide, then the calc-without-correction element shot (+0.7 cm step highlighted).</visual>
           <text>+0.7 cm (WHO rule) → z −1.94</text>
           <motion>Marker slides from −2.19 across −2 to −1.94 (real recorded animation); cut to the fold step list; the +0.7 cm row highlights.</motion>
@@ -77,7 +77,7 @@
       </shots>
     </scene>
 
-    <scene id="safety" duration="27">
+    <scene id="safety" duration="28">
       <intent>Prove the safety rule: a warning sign overrides everything, and implausible numbers are never shown.</intent>
       <shots>
         <shot id="safe-1" duration="7">
@@ -98,7 +98,7 @@
           <motion>Zoom out 1.0x; urgent block gets a soft glow.</motion>
           <voiceover>So the first thing on screen is: see a health worker today. No diagnosis.</voiceover>
         </shot>
-        <shot id="safe-4" duration="5">
+        <shot id="safe-4" duration="6">
           <visual>captures: normal result still (Arabic), all bars green.</visual>
           <text>Typical result</text>
           <motion>Hard cut; bars already settled.</motion>

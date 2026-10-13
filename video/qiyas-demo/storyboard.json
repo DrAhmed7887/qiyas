@@ -29,12 +29,12 @@ wrote /Users/ahmedzayed/Projects/hackathons/2026-10-univabio-namaa/.claude/workt
     },
     {
       "id": "correction",
-      "duration": 26,
+      "duration": 29,
       "intent": "The wow beat: the 0.7 cm correction moves the child across a WHO cut-off, and the app shows why.",
       "shots": [
         {
           "id": "corr-1",
-          "duration": 7,
+          "duration": 8,
           "visual": "captures: clip (a), click on Example 1 in the Arabic UI; result appears.",
           "text": "Synthetic example",
           "motion": "Real clip; click ripple on the demo button; result card slides in.",
@@ -50,7 +50,7 @@ wrote /Users/ahmedzayed/Projects/hackathons/2026-10-univabio-namaa/.claude/workt
         },
         {
           "id": "corr-3",
-          "duration": 7,
+          "duration": 9,
           "visual": "captures: clip (a) marker slide, then the calc-without-correction element shot (+0.7 cm step highlighted).",
           "text": "+0.7 cm (WHO rule) → z −1.94",
           "motion": "Marker slides from −2.19 across −2 to −1.94 (real recorded animation); cut to the fold step list; the +0.7 cm row highlights.",
@@ -83,7 +83,7 @@ wrote /Users/ahmedzayed/Projects/hackathons/2026-10-univabio-namaa/.claude/workt
     },
     {
       "id": "safety",
-      "duration": 27,
+      "duration": 28,
       "intent": "Prove the safety rule: a warning sign overrides everything, and implausible numbers are never shown.",
       "shots": [
         {
@@ -112,7 +112,7 @@ wrote /Users/ahmedzayed/Projects/hackathons/2026-10-univabio-namaa/.claude/workt
         },
         {
           "id": "safe-4",
-          "duration": 5,
+          "duration": 6,
           "visual": "captures: normal result still (Arabic), all bars green.",
           "text": "Typical result",
           "motion": "Hard cut; bars already settled.",
