@@ -29,12 +29,12 @@ wrote /Users/ahmedzayed/Projects/hackathons/2026-10-univabio-namaa/.claude/workt
     },
     {
       "id": "correction",
-      "duration": 25,
+      "duration": 26,
       "intent": "The wow beat: the 0.7 cm correction moves the child across a WHO cut-off, and the app shows why.",
       "shots": [
         {
           "id": "corr-1",
-          "duration": 6,
+          "duration": 7,
           "visual": "captures: clip (a), click on Example 1 in the Arabic UI; result appears.",
           "text": "Synthetic example",
           "motion": "Real clip; click ripple on the demo button; result card slides in.",
@@ -83,7 +83,7 @@ wrote /Users/ahmedzayed/Projects/hackathons/2026-10-univabio-namaa/.claude/workt
     },
     {
       "id": "safety",
-      "duration": 25,
+      "duration": 27,
       "intent": "Prove the safety rule: a warning sign overrides everything, and implausible numbers are never shown.",
       "shots": [
         {
@@ -104,7 +104,7 @@ wrote /Users/ahmedzayed/Projects/hackathons/2026-10-univabio-namaa/.claude/workt
         },
         {
           "id": "safe-3",
-          "duration": 6,
+          "duration": 7,
           "visual": "captures: same still, zoomed out to show urgent block first, re-measure second.",
           "text": "See a health worker today",
           "motion": "Zoom out 1.0x; urgent block gets a soft glow.",
@@ -112,7 +112,7 @@ wrote /Users/ahmedzayed/Projects/hackathons/2026-10-univabio-namaa/.claude/workt
         },
         {
           "id": "safe-4",
-          "duration": 4,
+          "duration": 5,
           "visual": "captures: normal result still (Arabic), all bars green.",
           "text": "Typical result",
           "motion": "Hard cut; bars already settled.",

@@ -19,7 +19,7 @@
 - [x] 268 words in 138 s (≈1.9 words/s); every line fits its shot at 2.5 words/s.
 - [x] On-screen text ≤ 12 words.
 - [x] VO paraphrases rather than reads on-screen text (except "Same child. Same tape measure.", on purpose).
-- [ ] Captions re-timed against the real TTS audio (after step 3 of render-notes).
+- [x] Captions re-timed against the real TTS audio (2026-10-13; 19 segments cut from one Gemini 3.8 Flash TTS take).
 
 ## Honesty / safety
 - [x] No unsourced statistics. "Might be measured standing" is not a frequency claim. The test count is read from the real test run.
