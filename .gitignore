@@ -13,3 +13,4 @@ __pycache__/
 coverage/
 submission/screenshots/
 video/captures/
+submission/.*.render.html
