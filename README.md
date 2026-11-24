@@ -79,3 +79,7 @@ Citation: WHO Multicentre Growth Reference Study Group. *WHO Child Growth Standa
 4. Only then, with Ahmed's OK, move this local folder to the Trash. GitHub + the SSD bundle keep it; Drive keeps the media.
 
 Built solo by Dr. Ahmed Zayed, physician-engineer.
+
+## License
+
+Code: [MIT](LICENSE). The WHO Child Growth Standards tables in `data/who/` are WHO data, reproduced unmodified with citation (see `data/who/SOURCE.md`); they are not covered by the MIT licence.
