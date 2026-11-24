@@ -23,11 +23,10 @@ WHO Multicentre Growth Reference Study Group. WHO Child Growth Standards: Length
 
 ## Conversion script
 
-Run as `python3 -I convert.py <raw_dir_with_{ind}-{sex}.xlsx> <out_dir> <urls.txt>` (urls.txt = the 8 URLs above, one per line; the script appends the user site-packages path because `-I` hides openpyxl).
+Run as `python3 -I convert.py <raw_dir_with_{ind}-{sex}.xlsx> <out_dir> <urls.txt>` (urls.txt = the 8 URLs above, one per line; run it from an environment where `openpyxl` is installed, such as a virtualenv).
 
 ```python
 import sys, json, os
-sys.path.append("/Users/ahmedzayed/Library/Python/3.9/lib/python/site-packages")
 import openpyxl
 raw, out, urlfile = sys.argv[1:4]
 urls = {}
