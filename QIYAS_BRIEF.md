@@ -230,7 +230,5 @@ Write these drafts to `submission/`:
 - **If behind, drop in this order:** the AI layer, then the Normal profile, then visual polish. **Never drop:** sources, the safety boundary, the reviewed wording, or the submission files.
 
 ## 8. Where things live
-- **Code:** `~/Projects/hackathons/2026-10-univabio-namaa`, with GitHub `DrAhmed7887/qiyas` as the source of truth (the repo and folder keep the old name for now).
-- **Media** (video, final PDF, screenshots for Devpost): Google Drive `Zayed OS/Hackathons/2026-10-univabio-namaa/`.
-- **Tracking:** the Notion row in 🇪🇺 EU Opportunity Scout, "UnivaBio 2026 — Namaa".
-- **After the hackathon:** archive to the Extreme SSD under `Archive/hackathons/`. The steps are in the README.
+- **Code:** GitHub `DrAhmed7887/qiyas` (the source of truth).
+- **Media** (video, final PDF, screenshots): kept outside the repo.

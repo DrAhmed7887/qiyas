@@ -64,18 +64,8 @@ Citation: WHO Multicentre Growth Reference Study Group. *WHO Child Growth Standa
 - `docs/`: plan, build brief context, reviews
 - `submission/`: one-pager, video script, wording review list (rendered files go to Drive, not git)
 
-## Where things live
-| What | Where |
-|---|---|
-| Code (working copy) | `~/Projects/hackathons/2026-10-univabio-namaa` on the MacBook Pro |
-| Code (source of truth) | GitHub `DrAhmed7887/qiyas` (private until submission) |
-| Video, PDF, screenshots | Google Drive `Zayed OS/Hackathons/2026-10-univabio-namaa/` |
-| Tracking | Notion → 🇪🇺 EU Opportunity Scout → UnivaBio row |
-
-## When the hackathon is over (keep the laptops light)
-1. Push everything and tag it: `git tag univabio-submission && git push --tags`
-2. Bundle it to the SSD archive: `git bundle create "/Volumes/Extreme SSD/Archive/hackathons/2026-10-univabio-namaa.bundle" --all`
-3. Check the bundle: `git bundle verify <that file>`
-4. Only then, with Ahmed's OK, move this local folder to the Trash. GitHub + the SSD bundle keep it; Drive keeps the media.
-
 Built solo by Dr. Ahmed Zayed, physician-engineer.
+
+## License
+
+Code: [MIT](LICENSE). The WHO Child Growth Standards tables in `data/who/` are WHO data, reproduced unmodified with citation (see `data/who/SOURCE.md`); they are not covered by the MIT licence.
